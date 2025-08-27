@@ -58,6 +58,24 @@ ${ROOT}
 sh scripts/run_demo.sh
 ```
 
+## Understanding Model Outputs
+
+The CLIFF model returns three main outputs: `pred_rotmat`, `pred_betas`, and `pred_cam_crop`. 
+
+For detailed explanations of what these outputs represent, see:
+- [CLIFF_MODEL_OUTPUTS.md](CLIFF_MODEL_OUTPUTS.md) - Comprehensive documentation (English & Chinese)
+- [examples/simple_outputs_demo.py](examples/simple_outputs_demo.py) - Interactive demonstration script
+
+Quick overview:
+- `pred_rotmat` (shape: N×24×3×3): SMPL pose parameters as rotation matrices
+- `pred_betas` (shape: N×10): SMPL shape parameters controlling body proportions  
+- `pred_cam_crop` (shape: N×3): Camera parameters [scale, tx, ty] in crop coordinates
+
+Run the demo script to see detailed explanations:
+```shell
+python examples/simple_outputs_demo.py
+```
+
 <p float="left">
    <img src="assets/im08036/im08036.png" width="24%">
    <img src="assets/im08036/im08036_bbox.jpg" width="24%">
